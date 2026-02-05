@@ -1,0 +1,17 @@
+app.post("/valentine", (req, res) => {
+  const { answer } = req.body;
+  console.log("Valentine answer:", answer);
+
+  if (answer === "YES") {
+    res.json({
+      message: "She said YES 🥰❤️",
+      redirect: true
+    });
+  } else {
+    res.json({
+      message: "She said NO 😅",
+      redirect: false
+    });
+  }
+});
+

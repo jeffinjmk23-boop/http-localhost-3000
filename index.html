@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Will You Be My Valentine ❤️</title>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 320px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    button {
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+    <h1>Will you be my Valentine? ❤️</h1>
+
+    <button class="yes" onclick="sayYes()">YES 💖</button>
+    <button class="no" id="noBtn">NO 😢</button>
+  </div>
+
+  <script>
+    // Get the No button element
+    const noBtn = document.getElementById("noBtn");
+
+    // Function to move the No button randomly on hover/touch
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("touchstart", moveButton); // For mobile
+
+    function moveButton() {
+      // Calculate maximum positions to keep button within the viewport
+      const maxX = window.innerWidth - 150;
+      const maxY = window.innerHeight - 100;
+      
+      // Generate random positions
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+      
+      // Move the button to fixed position on screen
+      noBtn.style.position = "fixed";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    // Function to handle when Yes is clicked
+    function sayYes() {
+      // Update the page content to show celebration
+      document.body.innerHTML = `
+        <div class="box">
+          <h1>She said YES! 🥰❤️</h1>
+          <p>You just made me the happiest person 💖</p>
+          <p>Enjoy the moment! 💕</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
